@@ -1,15 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
 import '../App.css';
+import Home from '../containers/Home.jsx'
 import Game from '../containers/Game.jsx'
 import Leaderboard from '../containers/Leaderboard.jsx'
 
 const App = (props) =>
   <Router>
     <div className="App">
-      <Route exact path="/" render={() => <h1>Home</h1>} />
+      <Route exact path="/" component={Home} />
       <Route exact path="/game" component={Game} />
-      <Route exact path='/leaderboards' component={Leaderboard} />
+      <Route exact path="/leaderboards" component={Leaderboard} />
     </div>
   </Router>
 
