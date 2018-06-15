@@ -1,4 +1,5 @@
 import React from 'react';
+import InitialTd from './InitialTd'
 
 const Board = ({ initial, current }) => {
   const board = [
@@ -18,10 +19,10 @@ const Board = ({ initial, current }) => {
       <tr>
         {row.map((num, x) => {
           const ini = initial[(9*y) + x];
-          if (ini === null) {
-            return <td className={`x${x+1} y${y+1}`}></td>
+          if (ini !== null) {
+            return <InitialTd num={num} x={x+1} y={y+1} />
           } else {
-            return <td className={`initial x${x+1} y${y+1}`}>{num}</td>
+            return <td className={`x${x+1} y${y+1}`}></td>
           }
         })}
       </tr>
