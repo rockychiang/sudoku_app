@@ -1,5 +1,6 @@
 import React from 'react';
-import InitialTd from './InitialTd'
+import InitialTd from './InitialTd';
+import InputTd from './InputTd'
 
 const Board = ({ initial, current }) => {
   const board = [
@@ -20,9 +21,9 @@ const Board = ({ initial, current }) => {
         {row.map((num, x) => {
           const ini = initial[(9*y) + x];
           if (ini !== null) {
-            return <InitialTd num={num} x={x+1} y={y+1} />
+            return <InitialTd num={num} x={x} y={y} />
           } else {
-            return <td className={`x${x+1} y${y+1}`}></td>
+            return <InputTd num={num} x={x} y={y} />
           }
         })}
       </tr>
