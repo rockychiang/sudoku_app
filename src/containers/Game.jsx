@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { newGame } from '../actions/game';
+import Board from '../components/Board';
 
 class Game extends Component {
+  constructor(props) {
+    super(props)
 
-  componentDidMount() {
     this.props.newGame();
   }
 
@@ -13,6 +15,7 @@ class Game extends Component {
       <div className="box">
         <table className="table board">
           <tbody>
+            <Board puzzle={this.props.game.puzzle.board} />
           </tbody>
         </table>
       </div>
