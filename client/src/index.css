@@ -32,27 +32,27 @@ td {
   background-color: WhiteSmoke;
 }
 
-td.y1 {
+td.y0 {
   border-top: 0;
 }
 
-td.y9 {
+td.y8 {
   border-bottom: 0;
 }
 
-td.x1 {
+td.x0 {
   border-left: 0;
 }
 
-td.x9 {
+td.x8 {
   border-right: 0;
 }
 
-td.x3, td.x6 {
+td.x2, td.x5 {
   border-right: 2px solid black;
 }
 
-td.y3, td.y6 {
+td.y2, td.y5 {
   border-bottom: 2px solid black;
 }
 
