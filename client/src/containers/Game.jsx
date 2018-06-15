@@ -12,8 +12,8 @@ class Game extends Component {
 
   render() {
     return (
-      <div className="box">
-        <table className="table board">
+      <div>
+        <table className="board">
           <tbody>
             <Board puzzle={this.props.game.puzzle.board} />
           </tbody>

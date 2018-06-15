@@ -13,14 +13,14 @@ const Board = ({ puzzle }) => {
     puzzle.slice(72),
   ]
 
-  const game = board.map(row => {
+  const game = board.map((row, y) => {
     return (
       <tr>
-        {row.map(i => {
-          if (i === null) {
-            return <td></td>
+        {row.map((num, x) => {
+          if (num === null) {
+            return <td className={`x${x+1} y${y+1}`}></td>
           } else {
-            return <td>{i}</td>
+            return <td className={`initial x${x+1} y${y+1}`}>{num}</td>
           }
         })}
       </tr>
