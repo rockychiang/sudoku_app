@@ -13,7 +13,6 @@ class Game extends Component {
       <div className="box">
         <table className="table board">
           <tbody>
-            {console.log(this.props.puzzle.solution)}
           </tbody>
         </table>
       </div>
@@ -23,7 +22,7 @@ class Game extends Component {
 
 const mapStateToProps = state => {
   return {
-    puzzle: state.puzzle
+    game: state.game
   };
 }
 
