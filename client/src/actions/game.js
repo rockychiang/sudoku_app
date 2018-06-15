@@ -5,9 +5,11 @@ export function newGame() {
 
   return {
     type: 'GENERATE_PUZZLE',
-    puzzle: {
-      initial,
-      solution
+    game: {
+      puzzle: {
+        initial,
+        solution
+      }
     }
   }
 }
