@@ -12,6 +12,50 @@ h1 {
   text-shadow: 1px 1px black;
 }
 
+.board {
+  margin: 5em auto 0;
+  border: 3px solid black;
+  border-spacing: 0;
+}
+
+td {
+  width: 1.9em;
+  height: 1.9em;
+  font-size: 1.9em;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  border: 1px solid DarkGray;
+}
+
+.initial {
+  background-color: WhiteSmoke;
+}
+
+td.y1 {
+  border-top: 0;
+}
+
+td.y9 {
+  border-bottom: 0;
+}
+
+td.x1 {
+  border-left: 0;
+}
+
+td.x9 {
+  border-right: 0;
+}
+
+td.x3, td.x6 {
+  border-right: 2px solid black;
+}
+
+td.y3, td.y6 {
+  border-bottom: 2px solid black;
+}
+
 .box {
   margin: 0 auto;
   padding: 36px 0;
