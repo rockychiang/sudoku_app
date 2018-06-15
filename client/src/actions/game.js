@@ -8,6 +8,7 @@ export function newGame() {
     game: {
       puzzle: {
         initial,
+        board: initial,
         solution
       }
     }
