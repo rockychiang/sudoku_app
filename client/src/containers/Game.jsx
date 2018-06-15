@@ -11,11 +11,13 @@ class Game extends Component {
   }
 
   render() {
+    const { initial, current } = this.props.game.puzzle
+    
     return (
       <div>
         <table className="board">
           <tbody>
-            <Board puzzle={this.props.game.puzzle.board} />
+            <Board initial={initial} current={current} />
           </tbody>
         </table>
       </div>

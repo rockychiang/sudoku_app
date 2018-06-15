@@ -3,7 +3,7 @@ const sudoku = require('sudoku');
 
 export function newGame() {
   const initial = sudoku.makepuzzle();
-  const board = addOne(initial);
+  const current = addOne(initial);
   const solution = addOne(sudoku.solvepuzzle(initial));
 
   return {
@@ -11,7 +11,7 @@ export function newGame() {
     game: {
       puzzle: {
         initial,
-        board,
+        current,
         solution
       }
     }
