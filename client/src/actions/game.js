@@ -17,3 +17,13 @@ export function newGame() {
     }
   }
 }
+
+export function updateBoard(index, value) {
+  return {
+    type: 'UPDATE_BOARD',
+    payload: {
+      index,
+      value
+    }
+  }
+}
