@@ -5,8 +5,10 @@ export default (state = { puzzle: { initial: [], current: [], solution: [] }}, a
 
     case 'UPDATE_BOARD':
       const { index, value } = action.payload;
-      state.puzzle.current[index] = parseInt(value);
-      return state;
+      const newState = Object.assign({}, state);
+      const v = value === "" ? "" : parseInt(value);
+      newState.puzzle.current[index] = v;
+      return newState;
 
     default:
       return state;
