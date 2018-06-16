@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { newBoard, resetBoard, solveBoard, checkBoard } from '../actions/game';
 import Board from '../components/Board';
+import GameButton from '../components/GameButton';
 
 class Game extends Component {
   constructor(props) {
@@ -29,9 +30,9 @@ class Game extends Component {
         <table className="board">
           <Board initial={initial} current={current} />
         </table>
-        <button className="btn-game" name="newBoard" onClick={this.handleButtonClick}>New Game</button>
-        <button className="btn-game" name="resetBoard" onClick={this.handleButtonClick}>Reset Game</button>
-        <button className="btn-game" name="solveBoard" onClick={this.handleButtonClick}>Solve Game</button>
+        <GameButton type="new" onButtonClick={this.handleButtonClick} />
+        <GameButton type="reset" onButtonClick={this.handleButtonClick} />
+        <GameButton type="solve" onButtonClick={this.handleButtonClick} />
       </div>
     )
   }
