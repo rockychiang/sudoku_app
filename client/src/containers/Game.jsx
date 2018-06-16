@@ -14,6 +14,13 @@ class Game extends Component {
     this.props[e.target.name](this.props.game.puzzle.initial)
   }
 
+  componentDidUpdate() {
+    const { puzzle, complete } = this.props.game
+    if (!puzzle.current.includes("") && !complete) {
+      this.props.checkBoard(puzzle.initial, puzzle.current);
+    }
+  }
+
   render() {
     const { initial, current } = this.props.game.puzzle
 
