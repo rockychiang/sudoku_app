@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { newGame, resetBoard } from '../actions/game';
+import { newGame, resetBoard, solveBoard } from '../actions/game';
 import Board from '../components/Board';
 
 class Game extends Component {
@@ -10,8 +10,8 @@ class Game extends Component {
     this.props.newGame();
   }
 
-  handleResetButton = () => {
-    this.props.resetBoard(this.props.game.puzzle.initial)
+  handleButtonClick = (e) => {
+    this.props[e.target.name](this.props.game.puzzle.initial)
   }
 
   render() {
@@ -22,8 +22,8 @@ class Game extends Component {
         <table className="board">
           <Board initial={initial} current={current} />
         </table>
-        <button className="btn-game" onClick={this.handleResetButton}>Reset Game</button>
-        <button className="btn-game">Solve Game</button>
+        <button className="btn-game" name="resetBoard" onClick={this.handleButtonClick}>Reset Game</button>
+        <button className="btn-game" name="solveBoard" onClick={this.handleButtonClick}>Solve Game</button>
       </div>
     )
   }
@@ -35,4 +35,4 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps, { newGame, resetBoard })(Game)
+export default connect(mapStateToProps, { newGame, resetBoard, solveBoard })(Game)

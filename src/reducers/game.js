@@ -16,6 +16,11 @@ export default (state = { puzzle: { initial: [], current: [], solution: [] }}, a
       newState.puzzle.current = action.puzzle.initial
       return newState;
 
+    case 'SOLVE_BOARD':
+      newState = Object.assign({}, state);
+      newState.puzzle.current = action.puzzle.solution
+      return newState;
+
     default:
       return state;
   }
