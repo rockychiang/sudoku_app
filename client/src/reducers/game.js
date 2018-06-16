@@ -5,6 +5,7 @@ export default (state = { puzzle: { initial: [], current: [] }, complete: false}
       newState = Object.assign({}, state);
       newState.puzzle.initial = action.puzzle.initial;
       newState.puzzle.current = action.puzzle.current;
+      newState.complete = false;
       return newState;
 
     case 'UPDATE_BOARD':
@@ -17,12 +18,14 @@ export default (state = { puzzle: { initial: [], current: [] }, complete: false}
     case 'RESET_BOARD':
       newState = Object.assign({}, state);
       newState.puzzle.current = action.puzzle.initial;
+      newState.complete = false;
       return newState;
 
     case 'SOLVE_BOARD':
       newState = Object.assign({}, state);
       newState.puzzle.current = action.puzzle.solution;
       newState.complete = true;
+      newState.autoComplete = true;
       return newState;
 
     default:
