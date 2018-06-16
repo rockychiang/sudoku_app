@@ -12,12 +12,6 @@ h1 {
   text-shadow: 1px 1px black;
 }
 
-.board {
-  margin: 5em auto 0;
-  border: 3px solid black;
-  border-spacing: 0;
-}
-
 td {
   width: 1.9em;
   height: 1.9em;
@@ -26,10 +20,6 @@ td {
   margin: 0;
   vertical-align: middle;
   border: 1px solid DarkGray;
-}
-
-.initial {
-  background-color: WhiteSmoke;
 }
 
 td.y0 {
@@ -56,6 +46,21 @@ td.y2, td.y5 {
   border-bottom: 2px solid black;
 }
 
+input {
+  border: 0;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .box {
   margin: 0 auto;
   padding: 36px 0;
@@ -63,4 +68,14 @@ td.y2, td.y5 {
   border-radius: 10px;
   background-color: WhiteSmoke;
   width: 30%;
+}
+
+.board {
+  margin: 5em auto 0;
+  border: 3px solid black;
+  border-spacing: 0;
+}
+
+.initial {
+  background-color: WhiteSmoke;
 }

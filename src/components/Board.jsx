@@ -1,6 +1,7 @@
 import React from 'react';
+import calcId from '../utils/calcId';
 import InitialTd from './InitialTd';
-import InputTd from './InputTd'
+import InputTd from './InputTd';
 
 const Board = ({ initial, current }) => {
   const board = [
@@ -19,8 +20,8 @@ const Board = ({ initial, current }) => {
     return (
       <tr>
         {row.map((num, x) => {
-          const ini = initial[(9*y) + x];
-          if (ini !== null) {
+          const boxId = calcId(x, y);
+          if (initial[boxId] !== null) {
             return <InitialTd num={num} x={x} y={y} />
           } else {
             return <InputTd num={num} x={x} y={y} />
