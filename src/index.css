@@ -76,7 +76,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 .btn-home:focus {
   outline: none;
+}
 
+.btn-game {
+  margin: 0 1em;
+  padding: 1em;
+  border: 3px solid DarkGray;
+  border-radius: 10px;
+  font-size: 1.1em;
+}
+
+.btn-game:focus {
+  outline: none;
 }
 
 .box {
@@ -89,7 +100,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .board {
-  margin: 5em auto 0;
+  margin: 2.5em auto 2.5em;
   border: 3px solid black;
   border-spacing: 0;
 }
