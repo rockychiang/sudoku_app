@@ -6,9 +6,9 @@ const Home = (props) =>
     <h1>React Sudoku App</h1>
 
     <div className="box">
-      <Link to="/game"><button className="btn btn-secondary">New Game</button></Link>
+      <Link to="/game"><button className="btn-home">New Game</button></Link>
       <br /><br />
-      <Link to="/leaderboard"><button className="btn btn-secondary">Leaderboard</button></Link>
+      <Link to="/leaderboard"><button className="btn-home">Leaderboard</button></Link>
     </div>
   </div>
 
