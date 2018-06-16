@@ -1,11 +1,11 @@
 import addOne from '../utils/addOne'
 const sudoku = require('sudoku');
 
-export function newGame() {
+export function newBoard() {
   const initial = sudoku.makepuzzle();
 
   return {
-    type: 'GENERATE_PUZZLE',
+    type: 'NEW_BOARD',
     puzzle: {
       initial,
       current: addOne(initial)

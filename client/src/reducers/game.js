@@ -1,7 +1,7 @@
 export default (state = { puzzle: { initial: [], current: [] }, complete: false}, action) => {
   let newState;
   switch(action.type) {
-    case 'GENERATE_PUZZLE':
+    case 'NEW_BOARD':
       newState = Object.assign({}, state);
       newState.puzzle.initial = action.puzzle.initial;
       newState.puzzle.current = action.puzzle.current;
