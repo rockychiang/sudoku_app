@@ -5,7 +5,7 @@ export default (state = { puzzle: { initial: [], current: [], solution: [] }}, a
 
     case 'UPDATE_BOARD':
       const { index, value } = action.payload;
-      state.puzzle.current[index] = value;
+      state.puzzle.current[index] = parseInt(value);
       return state;
 
     default:
