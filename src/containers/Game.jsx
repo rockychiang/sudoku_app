@@ -22,6 +22,7 @@ class Game extends Component {
         <table className="board">
           <Board initial={initial} current={current} />
         </table>
+        <button className="btn-game" name="newGame" onClick={this.handleButtonClick}>New Game</button>
         <button className="btn-game" name="resetBoard" onClick={this.handleButtonClick}>Reset Game</button>
         <button className="btn-game" name="solveBoard" onClick={this.handleButtonClick}>Solve Game</button>
       </div>
