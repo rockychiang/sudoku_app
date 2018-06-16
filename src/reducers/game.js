@@ -1,6 +1,6 @@
 export default (state = {
   puzzle: { initial: [], current: [] },
-  status: { complete: false}
+  status: { complete: false},
 }, action) => {
   let newState;
   switch(action.type) {

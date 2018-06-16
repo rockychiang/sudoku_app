@@ -10,15 +10,15 @@ class Game extends Component {
     this.props.newBoard();
   }
 
-  handleButtonClick = (e) => {
-    this.props[e.target.name](this.props.game.puzzle.initial)
-  }
-
   componentDidUpdate() {
-    const { puzzle, complete } = this.props.game
-    if (!puzzle.current.includes("") && !complete) {
+    const { puzzle, status } = this.props.game
+    if ( !puzzle.current.includes("") && !status.complete && !status.checked) {
       this.props.checkBoard(puzzle.initial, puzzle.current);
     }
+  }
+
+  handleButtonClick = (e) => {
+    this.props[e.target.name](this.props.game.puzzle.initial)
   }
 
   render() {
