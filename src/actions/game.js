@@ -1,4 +1,5 @@
 import addOne from '../utils/addOne'
+import isEqual from '../utils/isEqual'
 const sudoku = require('sudoku');
 
 export function newBoard() {
@@ -37,6 +38,15 @@ export function solveBoard(initial) {
     type: 'SOLVE_BOARD',
     puzzle: {
       solution: addOne(sudoku.solvepuzzle(initial))
+    }
+  }
+}
+
+export function checkBoard(initial, current) {
+  return {
+    type: 'CHECK_BOARD',
+    status: {
+      complete: isEqual(current, addOne(sudoku.solvepuzzle(initial)))
     }
   }
 }
