@@ -1,4 +1,4 @@
-export default (state = { complete: false }, action) => {
+export default (state = { autoComplete: false, checked: false, complete: false }, action) => {
   let newState;
   switch(action.type) {
     case 'NEW_BOARD':
