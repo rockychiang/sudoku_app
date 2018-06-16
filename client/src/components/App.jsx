@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '../App.css';
 import Home from '../containers/Home.jsx'
 import Game from '../containers/Game.jsx'

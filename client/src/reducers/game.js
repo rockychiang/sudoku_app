@@ -6,7 +6,7 @@ export default (state = { puzzle: { initial: [], current: [], solution: [] }}, a
     case 'UPDATE_BOARD':
       const { index, value } = action.payload;
       const newState = Object.assign({}, state);
-      const v = value === "" ? "" : parseInt(value);
+      const v = value === "" ? "" : parseInt(value, 10);
       newState.puzzle.current[index] = v;
       return newState;
 
