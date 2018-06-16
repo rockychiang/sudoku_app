@@ -36,3 +36,12 @@ export function resetBoard(initial) {
     }
   }
 }
+
+export function solveBoard(initial) {
+  return {
+    type: 'SOLVE_BOARD',
+    puzzle: {
+      solution: addOne(sudoku.solvepuzzle(initial))
+    }
+  }
+}
