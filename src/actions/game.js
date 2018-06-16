@@ -27,3 +27,12 @@ export function updateBoard(index, value) {
     }
   }
 }
+
+export function resetBoard(initial) {
+  return {
+    type: 'RESET_BOARD',
+    puzzle: {
+      initial: addOne(initial)
+    }
+  }
+}
