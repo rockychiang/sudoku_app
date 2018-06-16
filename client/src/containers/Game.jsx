@@ -18,6 +18,8 @@ class Game extends Component {
         <table className="board">
           <Board initial={initial} current={current} />
         </table>
+        <button className="btn-game">Reset Game</button>
+        <button className="btn-game">Solve Game</button>
       </div>
     )
   }
