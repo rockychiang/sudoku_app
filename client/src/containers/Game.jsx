@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { newBoard, resetBoard, solveBoard } from '../actions/game';
+import { newBoard, resetBoard, solveBoard, checkBoard } from '../actions/game';
 import Board from '../components/Board';
 
 class Game extends Component {
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps, { newBoard, resetBoard, solveBoard })(Game)
+export default connect(mapStateToProps, { newBoard, resetBoard, solveBoard, checkBoard })(Game)

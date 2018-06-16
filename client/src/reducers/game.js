@@ -13,6 +13,7 @@ export default (state = { puzzle: { initial: [], current: [] }, complete: false}
       const v = value === "" ? "" : parseInt(value, 10);
       newState = Object.assign({}, state);
       newState.puzzle.current[index] = v;
+      newState.complete = false;
       return newState;
 
     case 'RESET_BOARD':
@@ -26,6 +27,12 @@ export default (state = { puzzle: { initial: [], current: [] }, complete: false}
       newState.puzzle.current = action.puzzle.solution;
       newState.complete = true;
       newState.autoComplete = true;
+      return newState;
+
+    case 'CHECK_BOARD':
+      newState = Object.assign({}, state);
+      newState.complete = action.status.complete;
+      newState.autoComplete = false;
       return newState;
 
     default:
