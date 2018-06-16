@@ -12,13 +12,11 @@ class Game extends Component {
 
   render() {
     const { initial, current } = this.props.game.puzzle
-    
+
     return (
       <div>
         <table className="board">
-          <tbody>
-            <Board initial={initial} current={current} />
-          </tbody>
+          <Board initial={initial} current={current} />
         </table>
       </div>
     )

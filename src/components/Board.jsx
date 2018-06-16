@@ -18,13 +18,13 @@ const Board = ({ initial, current }) => {
 
   const game = board.map((row, y) => {
     return (
-      <tr>
+      <tr key={y}>
         {row.map((num, x) => {
           const boxId = calcId(x, y);
           if (initial[boxId] !== null) {
-            return <InitialTd num={num} x={x} y={y} />
+            return <InitialTd num={num} x={x} y={y} key={x} />
           } else {
-            return <InputTd num={num} x={x} y={y} />
+            return <InputTd num={num} x={x} y={y} boxId={boxId} key={x} />
           }
         })}
       </tr>
@@ -32,9 +32,9 @@ const Board = ({ initial, current }) => {
   })
 
   return (
-    <div>
+    <tbody>
       {game}
-    </div>
+    </tbody>
   )
 }
 
