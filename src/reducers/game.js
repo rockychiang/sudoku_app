@@ -1,8 +1,11 @@
-export default (state = { puzzle: { initial: [], current: [], solution: [] }}, action) => {
+export default (state = { puzzle: { initial: [], current: [] }, complete: false}, action) => {
   let newState;
   switch(action.type) {
     case 'GENERATE_PUZZLE':
-      return Object.assign({}, state, action.game);
+      newState = Object.assign({}, state);
+      newState.puzzle.initial = action.puzzle.initial;
+      newState.puzzle.current = action.puzzle.current;
+      return newState;
 
     case 'UPDATE_BOARD':
       const { index, value } = action.payload;
@@ -13,12 +16,13 @@ export default (state = { puzzle: { initial: [], current: [], solution: [] }}, a
 
     case 'RESET_BOARD':
       newState = Object.assign({}, state);
-      newState.puzzle.current = action.puzzle.initial
+      newState.puzzle.current = action.puzzle.initial;
       return newState;
 
     case 'SOLVE_BOARD':
       newState = Object.assign({}, state);
-      newState.puzzle.current = action.puzzle.solution
+      newState.puzzle.current = action.puzzle.solution;
+      newState.complete = true;
       return newState;
 
     default:
