@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import game from './game';
+import puzzle from './puzzle';
+import status from './status';
 
 const rootReducer = combineReducers({
-  game
+  puzzle,
+  status
 });
 
 export default rootReducer;
