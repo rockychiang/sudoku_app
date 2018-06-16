@@ -12,18 +12,18 @@ class Game extends Component {
   }
 
   componentDidUpdate() {
-    const { puzzle, status } = this.props.game
+    const { puzzle, status } = this.props
     if ( !puzzle.current.includes("") && !status.complete && !status.checked) {
       this.props.checkBoard(puzzle.initial, puzzle.current);
     }
   }
 
   handleButtonClick = (e) => {
-    this.props[e.target.name](this.props.game.puzzle.initial)
+    this.props[e.target.name](this.props.puzzle.initial)
   }
 
   render() {
-    const { initial, current } = this.props.game.puzzle
+    const { initial, current } = this.props.puzzle
 
     return (
       <div>
@@ -40,7 +40,8 @@ class Game extends Component {
 
 const mapStateToProps = state => {
   return {
-    game: state.game
+    puzzle: state.puzzle,
+    status: state.status
   };
 }
 
