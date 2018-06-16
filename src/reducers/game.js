@@ -3,6 +3,11 @@ export default (state = { puzzle: { initial: [], current: [], solution: [] }}, a
     case 'GENERATE_PUZZLE':
       return Object.assign({}, state, action.game);
 
+    case 'UPDATE_BOARD':
+      const { index, value } = action.payload;
+      state.puzzle.current[index] = value;
+      return state;
+
     default:
       return state;
   }
