@@ -1,11 +1,14 @@
-export default (state = { puzzle: { initial: [], current: [] }, complete: false}, action) => {
+export default (state = {
+  puzzle: { initial: [], current: [] },
+  status: { complete: false}
+}, action) => {
   let newState;
   switch(action.type) {
     case 'NEW_BOARD':
       newState = Object.assign({}, state);
       newState.puzzle.initial = action.puzzle.initial;
       newState.puzzle.current = action.puzzle.current;
-      newState.complete = false;
+      newState.status.complete = false;
       return newState;
 
     case 'UPDATE_BOARD':
@@ -13,26 +16,29 @@ export default (state = { puzzle: { initial: [], current: [] }, complete: false}
       const v = value === "" ? "" : parseInt(value, 10);
       newState = Object.assign({}, state);
       newState.puzzle.current[index] = v;
-      newState.complete = false;
+      newState.status.complete = false;
+      newState.status.checked = false;
       return newState;
 
     case 'RESET_BOARD':
       newState = Object.assign({}, state);
       newState.puzzle.current = action.puzzle.initial;
-      newState.complete = false;
+      newState.status.complete = false;
       return newState;
 
     case 'SOLVE_BOARD':
       newState = Object.assign({}, state);
       newState.puzzle.current = action.puzzle.solution;
-      newState.complete = true;
-      newState.autoComplete = true;
+      newState.status.complete = true;
+      newState.status.autoComplete = true;
+      newState.status.checked = true;
       return newState;
 
     case 'CHECK_BOARD':
       newState = Object.assign({}, state);
-      newState.complete = action.status.complete;
-      newState.autoComplete = false;
+      newState.status.complete = action.status.complete;
+      newState.status.autoComplete = false;
+      newState.status.checked = true;
       return newState;
 
     default:
