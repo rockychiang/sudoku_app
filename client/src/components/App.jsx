@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '../App.css';
-import Home from '../containers/Home.jsx'
+import Home from './Home.jsx'
 import Game from '../containers/Game.jsx'
 import Leaderboard from '../containers/Leaderboard.jsx'
 
