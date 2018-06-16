@@ -1,7 +1,7 @@
 import React from 'react';
 import calcId from '../utils/calcId';
 import InitialTd from './InitialTd';
-import InputTd from './InputTd';
+import InputTd from '../containers/InputTd';
 
 const Board = ({ initial, current }) => {
   const board = [
