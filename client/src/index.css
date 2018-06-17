@@ -108,3 +108,37 @@ input[type=number]::-webkit-outer-spin-button {
 .initial {
   background-color: WhiteSmoke;
 }
+
+.leaderboard {
+  margin: 0 auto 2.5em;
+  border-top: 3px solid DarkGray;
+  border-bottom: 3px solid DarkGrey;
+}
+
+.leaderboard td, th {
+  font-size: 1.25em;
+  border: 0;
+  margin: 0;
+}
+
+.leaderboard-header th {
+  padding: 0.5em 1em;
+  border-bottom: 3px solid DarkGrey;
+  background-color: WhiteSmoke;
+}
+
+.leaderboard-index {
+  width: 10%;
+}
+
+.leaderboard-name {
+  padding-left: 1em;
+  width: 65%;
+  text-align: left;
+}
+
+.leaderboard-time {
+  padding-right: 1em;
+  width: 25%;
+  text-align: right;
+}

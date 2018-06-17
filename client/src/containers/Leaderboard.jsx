@@ -16,9 +16,10 @@ class Leaderboard extends Component {
 
     return (
       <div>
-        <table>
+        <h2>Leaderboard</h2>
+        <table className="leaderboard">
           <tbody>
-            <tr><th>No.</th><th>Name</th><th>Time</th></tr>
+            <tr className="leaderboard-header"><th>No.</th><th className="leaderboard-name">Name</th><th>Time</th></tr>
             {topten}
           </tbody>
         </table>
