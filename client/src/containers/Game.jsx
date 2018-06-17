@@ -17,6 +17,7 @@ class Game extends Component {
       this.props.checkBoard(puzzle.initial, puzzle.current);
     } else if ( status.complete && status.checked && !status.autoComplete ) {
       this.props.stopTimer();
+      setTimeout(() => {this.props.history.push('/leaderboard')}, 2000);
     }
   }
 
