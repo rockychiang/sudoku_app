@@ -11,7 +11,7 @@ export function getLeaderboard() {
     { user: { name: "Cyll" }, timer: { time: 1800 } },
     { user: { name: "Lynn" }, timer: { time: 5000 } }
   ]
-
+  
   return {
     type: 'GET_LEADERBOARD',
     leaderboard
