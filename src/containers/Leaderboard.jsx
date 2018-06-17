@@ -1,5 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Leaderboard extends Component {
+class Leaderboard extends Component {
+  constructor(props) {
+    super(props);
 
+
+  }
+  render() {
+    return (
+      <div>
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = state => {
+  return {
+    leaderboard: state.leaderboard
+  }
+}
+
+export default connect(mapStateToProps)(Leaderboard)
