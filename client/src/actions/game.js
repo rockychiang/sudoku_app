@@ -19,7 +19,7 @@ export function updateBoard(index, value) {
     type: 'UPDATE_BOARD',
     payload: {
       index,
-      value
+      value: value === "" ? "" : parseInt(value, 10)
     }
   }
 }

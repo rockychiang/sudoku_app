@@ -6,9 +6,8 @@ export default (state = { initial: [], current: [] }, action) => {
 
     case 'UPDATE_BOARD':
       const { index, value } = action.payload;
-      const v = value === "" ? "" : parseInt(value, 10);
       newState = Object.assign({}, state);
-      newState.current[index] = v;
+      newState.current[index] = value;
       return newState;
 
     case 'RESET_BOARD':
