@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getLeaderboard } from '../actions/leaderboard';
+import Time from '../utils/Time'
 
 class Leaderboard extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class Leaderboard extends Component {
   }
 
   render() {
-    const topten = this.props.leaderboard.map((entry, index) => <tr key={index}><td>{index+1}.</td><td>{entry.user.name}</td><td>{entry.timer.time}</td></tr>)
+    const topten = this.props.leaderboard.map((entry, index) => <tr key={index}><td>{index+1}.</td><td>{entry.user.name}</td><td>{Time(entry.timer.time)}</td></tr>)
 
     return (
       <div>
