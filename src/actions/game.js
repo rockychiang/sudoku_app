@@ -50,3 +50,9 @@ export function checkBoard(initial, current) {
     }
   }
 }
+
+export function stopTimer() {
+  return {
+    type: 'STOP_TIMER'
+  }
+}

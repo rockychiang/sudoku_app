@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { newBoard, resetBoard, solveBoard, checkBoard } from '../actions/game';
+import { newBoard, resetBoard, solveBoard, checkBoard, stopTimer } from '../actions/game';
 import Board from '../components/Board';
 import GameButton from '../components/GameButton';
 
@@ -15,6 +15,8 @@ class Game extends Component {
     const { puzzle, status } = this.props
     if ( !puzzle.current.includes("") && !status.complete && !status.checked) {
       this.props.checkBoard(puzzle.initial, puzzle.current);
+    } else if ( status.complete && status.checked && !status.autoComplete ) {
+      this.props.stopTimer();
     }
   }
 
@@ -45,4 +47,4 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps, { newBoard, resetBoard, solveBoard, checkBoard })(Game)
+export default connect(mapStateToProps, { newBoard, resetBoard, solveBoard, checkBoard, stopTimer })(Game)

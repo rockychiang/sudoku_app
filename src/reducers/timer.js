@@ -13,6 +13,10 @@ export default (state = { time: 0 }, action) => {
       clearInterval(timer);
       return Object.assign({}, state);
 
+    case 'STOP_TIMER':
+      clearInterval(timer);
+      return Object.assign({}, state);
+
     default:
       return state;
   }
