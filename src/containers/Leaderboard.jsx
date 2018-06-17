@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getLeaderboard } from '../actions/leaderboard';
 import LbEntry from '../components/LbEntry'
+import GameButton from '../components/GameButton'
 import Time from '../utils/Time'
 
 class Leaderboard extends Component {
@@ -9,6 +10,10 @@ class Leaderboard extends Component {
     super(props);
 
     this.props.getLeaderboard();
+  }
+
+  handleButtonClick = (e) => {
+    this.props.history.push('/game')
   }
 
   render() {
@@ -23,6 +28,7 @@ class Leaderboard extends Component {
             {topten}
           </tbody>
         </table>
+        <GameButton type="new" onButtonClick={this.handleButtonClick} />
       </div>
     )
   }
