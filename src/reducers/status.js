@@ -1,35 +1,19 @@
 export default (state = { autoComplete: false, checked: false, complete: false }, action) => {
-  let newState;
   switch(action.type) {
     case 'NEW_BOARD':
-      newState = Object.assign({}, state);
-      newState.complete = false;
-      return newState;
+      return Object.assign({}, state, { complete: false });
 
     case 'UPDATE_BOARD':
-      newState = Object.assign({}, state);
-      newState.complete = false;
-      newState.checked = false;
-      return newState;
+      return Object.assign({}, state, { checked: false, complete: false });
 
     case 'RESET_BOARD':
-      newState = Object.assign({}, state);
-      newState.complete = false;
-      return newState;
+      return Object.assign({}, state, { complete: false });
 
     case 'SOLVE_BOARD':
-      newState = Object.assign({}, state);
-      newState.complete = true;
-      newState.autoComplete = true;
-      newState.checked = true;
-      return newState;
+      return Object.assign({}, state, { autoComplete: true, checked: true, complete: true });
 
     case 'CHECK_BOARD':
-      newState = Object.assign({}, state);
-      newState.complete = action.status.complete;
-      newState.autoComplete = false;
-      newState.checked = true;
-      return newState;
+      return Object.assign({}, state, { autoComplete: false, checked: true, complete: action.status.complete });
 
     default:
       return state;
