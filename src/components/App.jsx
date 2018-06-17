@@ -10,7 +10,7 @@ const App = (props) =>
     <div className="App">
       <Route exact path="/" component={Home} />
       <Route exact path="/game" component={Game} />
-      <Route exact path="/leaderboards" component={Leaderboard} />
+      <Route exact path="/leaderboard" component={Leaderboard} />
     </div>
   </Router>
 
