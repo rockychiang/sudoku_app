@@ -21,9 +21,12 @@ export default class UserForm extends Component {
       <div>
         <div className="dim">
         </div>
-        <div className="userform box ">
+        <div className="box userform">
+          <h2>Congratulations!</h2>
+          <p>Please enter you name for ranking purposes</p>
           <form>
             <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleInputChange} />
+            <br />
             <input type="submit" />
           </form>
         </div>
