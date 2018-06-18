@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default class UserForm extends Component {
+class UserForm extends Component {
   constructor(props) {
     super(props);
 
@@ -16,6 +16,12 @@ export default class UserForm extends Component {
     })
   }
 
+  handleFormSubmit = e => {
+    e.preventDefault();
+    debugger
+    // this.props.history.push('/leaderboard')
+  }
+
   render() {
     return (
       <div>
@@ -24,7 +30,7 @@ export default class UserForm extends Component {
         <div className="box userform">
           <h2>Congratulations!</h2>
           <p>Please enter you name for ranking purposes</p>
-          <form>
+          <form onSubmit={this.handleFormSubmit}>
             <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleInputChange} className="userform-input" />
             <br />
             <input type="submit" className="userform-submit" />
@@ -34,3 +40,5 @@ export default class UserForm extends Component {
     )
   }
 }
+
+export default connect(null)(UserForm)
