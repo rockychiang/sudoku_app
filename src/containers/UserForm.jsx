@@ -10,9 +10,9 @@ export default class UserForm extends Component {
     }
   }
 
-  handleInputChange(e) {
+  handleInputChange = e => {
     this.setState({
-      user: e.target.value
+      username: e.target.value
     })
   }
 
@@ -25,9 +25,9 @@ export default class UserForm extends Component {
           <h2>Congratulations!</h2>
           <p>Please enter you name for ranking purposes</p>
           <form>
-            <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleInputChange} />
+            <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleInputChange} className="userform-input" />
             <br />
-            <input type="submit" />
+            <input type="submit" className="userform-submit" />
           </form>
         </div>
       </div>
