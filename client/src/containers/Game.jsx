@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { newBoard, resetBoard, solveBoard, checkBoard, stopTimer } from '../actions/game';
 import Board from '../components/Board';
 import GameButton from '../components/GameButton';
+import UserForm from './UserForm';
 
 class Game extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Game extends Component {
         <GameButton type="new" onButtonClick={this.handleButtonClick} />
         <GameButton type="reset" onButtonClick={this.handleButtonClick} />
         <GameButton type="solve" onButtonClick={this.handleButtonClick} />
+        <UserForm />
       </div>
     )
   }
