@@ -153,9 +153,22 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 1;
 }
 
-div.userform {
+.userform {
   z-index: 2;
   position: fixed;
   top: 20%;
   left: 33%;
+}
+
+.userform-input {
+  margin: 1em auto;
+  padding: 0.5em;
+  border: 2px solid LightGrey;
+  border-radius: 5px;
+}
+
+.userform-submit {
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: DarkGrey;
 }
