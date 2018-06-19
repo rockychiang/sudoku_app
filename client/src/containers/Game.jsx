@@ -18,7 +18,6 @@ class Game extends Component {
       this.props.checkBoard(puzzle.initial, puzzle.current);
     } else if ( status.complete && status.checked && !status.autoComplete ) {
       this.props.stopTimer();
-      setTimeout(() => {this.props.history.push('/leaderboard')}, 2000);
     }
   }
 
@@ -28,6 +27,12 @@ class Game extends Component {
 
   render() {
     const { initial, current } = this.props.puzzle
+    const { status } = this.props
+    let form;
+    
+    if (status.complete && status.checked && !status.autoComplete) {
+      form = <UserForm />
+    }
 
     return (
       <div>
@@ -37,7 +42,7 @@ class Game extends Component {
         <GameButton type="new" onButtonClick={this.handleButtonClick} />
         <GameButton type="reset" onButtonClick={this.handleButtonClick} />
         <GameButton type="solve" onButtonClick={this.handleButtonClick} />
-        <UserForm />
+        {form}
       </div>
     )
   }
