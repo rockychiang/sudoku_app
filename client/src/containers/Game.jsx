@@ -29,9 +29,9 @@ class Game extends Component {
     const { initial, current } = this.props.puzzle
     const { status } = this.props
     let form;
-    
+
     if (status.complete && status.checked && !status.autoComplete) {
-      form = <UserForm />
+      form = <UserForm history={this.props.history} />
     }
 
     return (

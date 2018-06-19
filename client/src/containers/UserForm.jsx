@@ -30,7 +30,7 @@ class UserForm extends Component {
       }
     };
     this.props.saveGame(data)
-    // this.props.history.push('/leaderboard')
+    this.props.history.push('/leaderboard')
   }
 
   render() {
