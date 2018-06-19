@@ -3,7 +3,7 @@ import calcId from '../utils/calcId';
 import InitialTd from './InitialTd';
 import InputTd from '../containers/InputTd';
 
-const Board = ({ initial, current }) => {
+const Board = ({ initial, current, disableInput }) => {
   const board = [
     current.slice(0,9),
     current.slice(9,18),
@@ -24,7 +24,7 @@ const Board = ({ initial, current }) => {
           if (initial[boxId] !== null) {
             return <InitialTd num={num} x={x} y={y} key={x} />
           } else {
-            return <InputTd num={num} x={x} y={y} boxId={boxId} key={x} />
+            return <InputTd num={num} x={x} y={y} boxId={boxId} key={x} disabled={disableInput} />
           }
         })}
       </tr>
