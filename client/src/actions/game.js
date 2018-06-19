@@ -56,3 +56,14 @@ export function stopTimer() {
     type: 'STOP_TIMER'
   }
 }
+
+export function saveGame(data) {
+  return (dispatch) => {
+    dispatch({type: 'STOP_TIMER'});
+    return fetch('http://localhost:3001/games', {
+      method: 'post',
+      data: JSON.stringify(data)
+    }).then(response => response.json())
+      .then(responseJSON => {dispatch({type: 'SAVE_GAME'})})
+  }
+}
