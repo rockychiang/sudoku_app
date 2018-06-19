@@ -14,9 +14,9 @@ class Game extends Component {
 
   componentDidUpdate() {
     const { puzzle, status } = this.props
-    if ( !puzzle.current.includes("") && !status.complete && !status.checked) {
+    if ( !puzzle.current.includes("") && !status.completed && !status.checked) {
       this.props.checkBoard(puzzle.initial, puzzle.current);
-    } else if ( status.complete && status.checked && !status.autoComplete ) {
+    } else if ( status.completed && status.checked && !status.autoComplete ) {
       this.props.stopTimer();
     }
   }
@@ -30,7 +30,7 @@ class Game extends Component {
     const { status } = this.props
     let form;
 
-    if (status.complete && status.checked && !status.autoComplete) {
+    if (status.completed && status.checked && !status.autoComplete) {
       form = <UserForm history={this.props.history} />
     }
 
