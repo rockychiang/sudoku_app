@@ -14,7 +14,7 @@ class GamesController < ApplicationController
 
   private
     def game_params
-      params.require(:game).permit(:time, :initial_board, :current_board, :completed)
+      params.require(:game).permit(:time, :completed, :initial_board => [], :current_board => [])
     end
 
     def user_params
