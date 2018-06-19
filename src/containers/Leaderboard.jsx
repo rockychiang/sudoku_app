@@ -17,7 +17,7 @@ class Leaderboard extends Component {
   }
 
   render() {
-    const topten = this.props.leaderboard.map((entry, index) => <LbEntry key={index} index={index+1} name={entry.user.name} time={Time(entry.timer.time)} />)
+    const topten = this.props.leaderboard.map((entry, index) => <LbEntry key={index} index={index+1} name={entry.user_id} time={Time(entry.time)} />)
 
     return (
       <div>

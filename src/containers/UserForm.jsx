@@ -19,13 +19,16 @@ class UserForm extends Component {
 
   handleFormSubmit = e => {
     e.preventDefault();
+    const { puzzle, status, timer } = this.props;
     const data = {
-      username: this.state.username,
-      initial_board: this.props.puzzle.initial,
-      current_board: this.props.puzzle.current,
-      completed: this.props.status.complete,
-      time: this.props.timer.time
-    }
+      user: { username: this.state.username },
+      game: {
+        initial_board: puzzle.initial,
+        current_board: puzzle.current,
+        completed: status.complete,
+        time: timer.time
+      }
+    };
     this.props.saveGame(data)
     // this.props.history.push('/leaderboard')
   }
