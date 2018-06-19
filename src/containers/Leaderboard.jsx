@@ -17,14 +17,20 @@ class Leaderboard extends Component {
   }
 
   render() {
-    const topten = this.props.leaderboard.map((entry, index) => <LbEntry key={index} index={index+1} name={entry.user_id} time={Time(entry.time)} />)
+    const topten = this.props.leaderboard.map((entry, index) =>
+      <LbEntry key={index} index={index+1} name={entry.user.username} time={Time(entry.time)} />
+    )
 
     return (
       <div>
         <h2>Leaderboard</h2>
         <table className="leaderboard">
           <tbody>
-            <tr className="leaderboard-header"><th>No.</th><th className="leaderboard-name">Name</th><th>Time</th></tr>
+            <tr className="leaderboard-header">
+              <th>No.</th>
+              <th className="leaderboard-name">Name</th>
+              <th>Time</th>
+            </tr>
             {topten}
           </tbody>
         </table>
