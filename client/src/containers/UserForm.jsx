@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { saveGame } from '../actions/game'
+import { saveGame } from '../actions/game';
+import convertNull from '../utils/convertNull';
 
 class UserForm extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class UserForm extends Component {
     const data = {
       user: { username: this.state.username },
       game: {
-        initial_board: puzzle.initial,
+        initial_board: convertNull(puzzle.initial),
         current_board: puzzle.current,
         completed: status.complete,
         time: timer.time
