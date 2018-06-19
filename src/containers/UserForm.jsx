@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { saveGame } from '../actions/game'
 
 class UserForm extends Component {
   constructor(props) {
@@ -18,7 +19,14 @@ class UserForm extends Component {
 
   handleFormSubmit = e => {
     e.preventDefault();
-    debugger
+    const data = {
+      username: this.state.username,
+      initial_board: this.props.puzzle.initial,
+      current_board: this.props.puzzle.current,
+      completed: this.props.status.complete,
+      time: this.props.timer.time
+    }
+    this.props.saveGame(data)
     // this.props.history.push('/leaderboard')
   }
 
@@ -41,4 +49,12 @@ class UserForm extends Component {
   }
 }
 
-export default connect(null)(UserForm)
+const mapStateToProps = state => {
+  return {
+    puzzle: state.puzzle,
+    status: state.status,
+    timer: state.timer
+  };
+}
+
+export default connect(mapStateToProps, { saveGame })(UserForm)
