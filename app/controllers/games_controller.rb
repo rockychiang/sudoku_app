@@ -1,5 +1,3 @@
-require 'pry'
-
 class GamesController < ApplicationController
   def ranking
     @leaderboard = Game.topten
@@ -9,8 +7,9 @@ class GamesController < ApplicationController
   def create
     user = User.find_or_create_by(user_params)
     game = user.games.new(game_params)
-    game.save
-    render json: game
+    if game.save
+      render json: game
+    end
   end
 
   private
