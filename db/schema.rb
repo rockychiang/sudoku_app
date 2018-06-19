@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2018_06_18_195327) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "time"
-    t.text "initial_board"
-    t.text "current_board"
+    t.text "initial_board", default: [], array: true
+    t.text "current_board", default: [], array: true
     t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
