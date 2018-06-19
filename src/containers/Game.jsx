@@ -37,11 +37,11 @@ class Game extends Component {
     return (
       <div>
         <table className="board">
-          <Board initial={initial} current={current} />
+          <Board initial={initial} current={current} disableInput={status.autoComplete} />
         </table>
         <GameButton type="new" onButtonClick={this.handleButtonClick} />
-        <GameButton type="reset" onButtonClick={this.handleButtonClick} />
-        <GameButton type="solve" onButtonClick={this.handleButtonClick} />
+        <GameButton type="reset" onButtonClick={this.handleButtonClick} disabled={status.autoComplete} />
+        <GameButton type="solve" onButtonClick={this.handleButtonClick} disabled={status.autoComplete} />
         {form}
       </div>
     )
