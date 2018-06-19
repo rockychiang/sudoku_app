@@ -46,7 +46,7 @@ export function checkBoard(initial, current) {
   return {
     type: 'CHECK_BOARD',
     status: {
-      complete: isEqual(current, addOne(sudoku.solvepuzzle(initial)))
+      completed: isEqual(current, addOne(sudoku.solvepuzzle(initial)))
     }
   }
 }
