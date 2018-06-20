@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "https://rails-sudoku-api.herokuapp.com",
   "dependencies": {
     "bootstrap": "^4.1.1",
     "react": "^16.4.1",
