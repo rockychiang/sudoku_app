@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  margin: 0 0 2em;
+  padding: 1.25em;
+  background-color: LightGrey;
+  color: LightSlateGray;
+  text-shadow: 1px 1px black;
+}
+
+td {
+  width: 1.9em;
+  height: 1.9em;
+  font-size: 1.9em;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  border: 1px solid DarkGray;
+}
+
+td.y0 {
+  border-top: 0;
+}
+
+td.y8 {
+  border-bottom: 0;
+}
+
+td.x0 {
+  border-left: 0;
+}
+
+td.x8 {
+  border-right: 0;
+}
+
+td.x2, td.x5 {
+  border-right: 2px solid black;
+}
+
+td.y2, td.y5 {
+  border-bottom: 2px solid black;
+}
+
+input {
+  border: 0;
+  padding: 0;
+  text-align: center;
+  width: inherit;
+  height: inherit;
+  font: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn-home {
+  padding: 0.75em;
+  border: 0;
+  border-radius: 10px;
+  background-color: DimGrey;
+  color: WhiteSmoke;
+  font-size: 1.1em;
+}
+
+.btn-home:focus {
+  outline: none;
+}
+
+.btn-game {
+  margin: 0 1em;
+  padding: 1em;
+  border: 3px solid DarkGray;
+  border-radius: 10px;
+  font-size: 1.1em;
+}
+
+.btn-game:focus {
+  outline: none;
+}
+
+.box {
+  margin: 0 auto;
+  padding: 5% 2%;
+  border: 2px solid DarkGray;
+  border-radius: 10px;
+  background-color: WhiteSmoke;
+  width: 30%;
+}
+
+.board {
+  margin: 2.5em auto 2.5em;
+  border: 3px solid black;
+  border-spacing: 0;
+}
+
+.initial {
+  background-color: LightGrey;
+}
+
+.leaderboard {
+  margin: 0 auto 2.5em;
+  border-top: 3px solid DarkGray;
+  border-bottom: 3px solid DarkGrey;
+}
+
+.leaderboard td, th {
+  font-size: 1.25em;
+  border: 0;
+  margin: 0;
+}
+
+.leaderboard-header th {
+  padding: 0.5em 1em;
+  border-bottom: 3px solid DarkGrey;
+  background-color: WhiteSmoke;
+}
+
+.leaderboard-index {
+  width: 10%;
+}
+
+.leaderboard-name {
+  padding-left: 1em;
+  width: 65%;
+  text-align: left;
+}
+
+.leaderboard-time {
+  padding-right: 1em;
+  width: 25%;
+  text-align: right;
+}
+
+.dim {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: Grey;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.userform {
+  z-index: 2;
+  position: fixed;
+  top: 20%;
+  left: 33%;
+}
+
+.userform-input {
+  margin: 1em auto;
+  padding: 0.5em;
+  border: 2px solid LightGrey;
+  border-radius: 5px;
+}
+
+.userform-submit {
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: DarkGrey;
+}
