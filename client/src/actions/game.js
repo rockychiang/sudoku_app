@@ -60,7 +60,7 @@ export function stopTimer() {
 export function saveGame(data) {
   return (dispatch) => {
     dispatch({type: 'STOP_TIMER'});
-    return fetch('/api/games', {
+    return fetch('/api/v1/games', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)

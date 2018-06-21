@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
-    get '/leaderboard' => 'games#ranking'
-
-    resources :games, only: :create
+    namespace :v1 do
+      resources :games, only: [:index, :create]
+    end
   end
 end
